@@ -1,0 +1,79 @@
+.form-container {
+    width: 48%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 25px;
+    position: relative;
+  }
+
+  .form-container-title {
+    font-size: 22px;
+    text-decoration: underline;
+    width: 48%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    position: relative;
+    text-align: center; 
+  }
+  
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .form-field {
+    font-size: 15px;
+    width: 48%;
+  }
+
+  .form-field.full-width {
+    width: 100%;
+  }
+
+  .submit-button {
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 15px;
+    margin-top: 4px;
+    height: 48px; 
+    width: 20%; 
+    position: absolute;
+    bottom: -24px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  ::ng-deep .mat-snack-bar-container {
+    font-weight: 700;
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+
+  ::ng-deep .mat-simple-snackbar-action{
+    color: #70ffd6 !important;
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    .form-container-title {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    
+    .form-container {
+      width: 80%;
+      padding: 10px;
+      padding-bottom: 25px;
+    }
+
+    .submit-button,.mat-form-field-appearance-fill,.mat-form-field-infix {
+        font-size: 12px;
+      }
+}

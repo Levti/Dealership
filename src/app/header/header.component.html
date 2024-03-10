@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="header"> <!--Sticky header could also work here-->
+    <span class="home-title"(click)="goTo('form')">My Dealership</span>
+    <span class="fill-remaining-space"></span> 
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="goTo('form')">Dealership</button>
+        <button mat-menu-item (click)="goTo('dashboard')">Dashboard</button>
+      </mat-menu>
+      
+</mat-toolbar>

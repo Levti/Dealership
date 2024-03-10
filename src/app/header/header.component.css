@@ -1,0 +1,11 @@
+.fill-remaining-space {
+    flex-grow: 1;
+  }
+  
+.header{
+    margin-bottom: 6%;
+}
+
+.home-title:hover{
+    cursor: pointer;
+}

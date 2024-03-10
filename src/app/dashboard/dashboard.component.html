@@ -1,0 +1,39 @@
+<mat-label class="dash-title">Welcome to dashboard</mat-label>
+
+<div class="dashboard-row">
+    <mat-card>
+      <canvas #maleChart width="300" height="300"></canvas>
+    </mat-card>
+    <mat-card>
+      <canvas #femaleChart width="300" height="300"></canvas>
+    </mat-card>
+</div>
+  
+<div class="dashboard-row">
+    <mat-card>
+        <canvas #hobbyChart width="300" height="300"></canvas>
+    </mat-card>
+    <mat-card>
+      <table class="city-table" mat-table [dataSource]="citiesData">
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef> City Name </th>
+          <td mat-cell *matCellDef="let cityData"> {{ cityData.city }} </td>
+        </ng-container>
+        <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef> Count </th>
+          <td mat-cell *matCellDef="let cityData"> {{ cityData.count }} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="['city', 'count']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['city', 'count']"></tr>
+      </table>
+      <div *ngIf="mostVisitedCity" class="most-visited-city">City with Most Visitors: {{ mostVisitedCity }}</div>
+      <div *ngIf="!mostVisitedCity" class="most-visited-city">City with Most Visitors: No data available</div>
+    </mat-card>
+</div>
+
+<div class="dashboard-row">
+    <div class="success-rate">Success Rate: {{ getSuccessRate() }}%</div>
+</div>
+
+

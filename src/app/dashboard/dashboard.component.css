@@ -1,0 +1,73 @@
+.dashboard-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px; 
+  }
+  
+  .mat-card {
+    margin: 10px;
+  }
+  
+  .mat-card:last-child {
+    margin-right: 0;
+  }
+  
+  .mat-table {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .dash-title {
+    font-size: 22px;
+    text-decoration: underline;
+    width: 48%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    position: relative; 
+    text-align: center; 
+  }
+  
+  .mat-card {
+    background: #f9f9f9;
+    margin: 10px; 
+  }
+  
+  .mat-card:last-child {
+    margin-right: 0; 
+  }
+
+  .city-table {
+    width: 100%;
+    background: #f9f9f9;
+    font-size: 15px;
+  }
+  
+  .city-table th{
+    font-size: 15px;
+  }
+
+  .most-visited-city {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .mat-card {
+      margin-right: 0px;
+    }
+
+    .dash-title {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+    .dashboard-row{
+        flex-direction: column;
+      }
+}

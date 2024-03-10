@@ -1,0 +1,91 @@
+<!--Code is fully functional and working. If something isn't working or if you encounter difficulty building the project, feel free to contact me. All code was written in 24 hours.-->
+
+<mat-label class="form-container-title">Please fill all of the following details</mat-label>
+  <div class="form-container">
+    <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field full-width">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="fullName">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthDate" [max]="getCurrentDate()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>City</mat-label>
+          <input matInput formControlName="city">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Country</mat-label>
+          <input matInput formControlName="country">
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Hobbies</mat-label>
+            <mat-select formControlName="hobbies" multiple>
+              <mat-option *ngFor="let hobby of hobbiesList" [value]="hobby">{{ hobby }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Color</mat-label> <!-- Unfortunately, I had problems installing a color picker, there were many build errors when using { ColorPickerModule } 'ngx-color-picker'-->
+          <mat-select formControlName="favoriteColor">
+            <mat-option *ngFor="let color of favoriteColors" [value]="color">{{ color }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Required Amount of Seats</mat-label>
+          <mat-select formControlName="requiredSeats">
+            <mat-option *ngFor="let seats of numOfSeats" [value]="seats">{{ seats }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Motor Type</mat-label>
+          <mat-select formControlName="motorType">
+            <mat-option value="Electric">Electric</mat-option>
+            <mat-option value="Fuel">Fuel</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary" class="submit-button" type="submit">Submit</button>
+  
+    </form>
+  </div>
+  
